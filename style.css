@@ -1,0 +1,80 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Some help with colors */
+:root {
+    --git-backgorund: #F05033;
+    --line: #ffffff;
+  }
+
+/* Boring code just to center our logo :-) */
+.container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Now let's create our git logo! :-D  */
+/* We create the square of the git logo. Remember the position. :-D */
+.git {
+    width: 150px;
+    height: 150px;
+    background-color: var(--git-backgorund);
+    border-radius: 15px;
+    position: relative;
+    /* we give the right roatation! Cool! */
+    transform: rotate(45deg);
+}
+
+/* Now we are writing the lines of the logo. Thanks position! :-) */
+.line {
+    height: 12px;
+    background-color: var(--line);
+    position: absolute;
+}
+.line.upper {
+    width: 110px;
+    top: 40px;
+}
+.line.lower {
+    width: 90px;
+    top: 70px;
+    left: 30px;
+    /* Just add a little rotation to create the magic! Cool :-D */
+    transform: rotate(45deg);
+}
+
+/* We add the circles of the logo thanks to before and after pseudo-elements. Nice! :-D  */
+/* to the upper line */
+.upper::before,
+.upper::after {
+    content: "";
+    width: 30px;
+    height: 30px;
+    background-color: var(--line);
+    border-radius: 50%;
+    position: absolute;
+    top: -8px;
+    left: 30px;
+}
+.upper::after {
+    left: 90px;
+}
+/* to the lower line */
+.lower::before {
+    content: "";
+    width: 30px;
+    height: 30px;
+    background-color: var(--line);
+    border-radius: 50%;
+    position: absolute;
+    top: -8px;
+    left: 70px;
+}
+
+/* WOW! It looks like the real one! */
+/* Thank you */
